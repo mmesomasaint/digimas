@@ -4,24 +4,25 @@ import {
   BsInstagram,
   BsPinterest,
 } from 'react-icons/bs'
+import FormDisplay from '../components/form/form-display'
 
 export default function Home() {
   return (
     <div>
       <div className='fixed backdrop-blur-sm w-full'>
-        <div className='p-5 top-0 flex justify-between items-center w-full'>
+        <div className='w-[85%] sm:w-[80%] mx-auto max-w-[85rem] py-5 top-0 flex justify-between items-center'>
           <div>
-            <span className='text-[#CAEC5C] text-lg font-bold'>DIGIMAS</span>
+            <span className='text-[#CAEC5C] text-xl font-bold'>DIGIMAS</span>
           </div>
           <div>
-            <button className='bg-[#7E121D] text-white text-base xl:text-lg font-semibold leading-none py-2 px-4 xl:px-6 shadow-sm rounded-md'>
+            <a href='#enlist' className='bg-[#7E121D] text-white text-base xl:text-lg font-semibold leading-none py-2 px-4 xl:px-6 shadow-sm rounded-md'>
               ENLIST NOW
-            </button>
+            </a>
           </div>
         </div>
       </div>
       <div className="h-[30rem] lg:h-[40rem] w-full bg-[url('/imgs/christmas-side-tree.jpg')] bg-no-repeat bg-cover bg-right-bottom">
-        <div className='bg-[rgba(126,18,29,0.5)] h-full w-full'>
+        <div className='bg-[rgba(126,18,29,0.3)] h-full w-full'>
           <div className='h-full flex flex-col mx-auto w-[70%] bg-transparent justify-center items-center'>
             <span className='text-6xl lg:text-8xl font-bold text-[#CAEC5C] leading-tight text-center'>
               Experience Holidays Digitally
@@ -142,7 +143,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="h-fit sm:h-[30rem] w-full bg-[url('/imgs/christmas-tree.jpg')] bg-no-repeat bg-cover bg-right-bottom">
+      <div id='enlist' className="h-fit sm:h-[30rem] w-full bg-[url('/imgs/christmas-tree.jpg')] bg-no-repeat bg-cover bg-right-bottom bg-scroll">
         <div className='bg-[rgba(3,79,27,0.4)] h-full w-full'>
           <div className='w-[85%] sm:w-[80%] max-w-[85rem] h-full mx-auto py-10 grid grid-cols-dense sm:grid-cols-5 gap-5 sm:gap-10 md:place-items-center place-content-center'>
             <div className='sm:col-span-2 sm:flex sm:flex-col sm:justify-center sm:h-full sm:w-full flex-none lg:flex-none w-auto lg:w-auto '>
@@ -153,63 +154,7 @@ export default function Home() {
                 ENLIST NOW!
               </span>
             </div>
-            <form className='p-5 md:p-10 bg-[#7E121D] rounded-md shadow-sm sm:col-span-3 h-fit'>
-              <div className='flex flex-col md:flex-row md:gap-6'>
-                <div className='lg:my-2 xl:my-4 flex-grow'>
-                  <label
-                    htmlFor='fname'
-                    className='text-base lg:text-lg xl:text-xl font-medium text-[#CEAC5C] block my-2'
-                  >
-                    First Name
-                  </label>
-                  <input
-                    type='text'
-                    id='fname'
-                    name='fname'
-                    className='p-1 lg:p-2 text-semibold text-base xl:text-lg text-gray-900 w-full rounded-md focus:outline-none'
-                    autoComplete='fname'
-                    required
-                  />
-                </div>
-                <div className='lg:my-2 xl:my-4 flex-grow'>
-                  <label
-                    htmlFor='lname'
-                    className='text-base lg:text-lg xl:text-xl font-medium text-[#CEAC5C] block my-2'
-                  >
-                    Last Name
-                  </label>
-                  <input
-                    type='text'
-                    id='lname'
-                    name='lname'
-                    className='p-1 lg:p-2 text-semibold text-base xl:text-lg text-gray-900 w-full rounded-md focus:outline-none'
-                    autoComplete='lname'
-                    required
-                  />
-                </div>
-              </div>
-              <div className='lg:my-2'>
-                <label
-                  htmlFor='email'
-                  className='text-base lg:text-lg xl:text-xl font-medium text-[#CEAC5C] block my-2'
-                >
-                  Email
-                </label>
-                <input
-                  type='text'
-                  id='email'
-                  name='email'
-                  className='p-1 lg:p-2 text-semibold text-base xl:text-lg text-gray-900 w-full rounded-md focus:outline-none'
-                  autoComplete='email'
-                  required
-                />
-              </div>
-              <div className='mt-4 flex justify-end'>
-                <button className='border-2 border-[#CEAC5C] text-[#CEAC5C] text-base xl:text-lg font-semibold leading-none py-1 xl:py-2 px-3 xl:px-6 shadow-sm rounded-md'>
-                  ENLIST NOW
-                </button>
-              </div>
-            </form>
+            <FormDisplay />
           </div>
         </div>
       </div>
