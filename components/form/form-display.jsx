@@ -1,4 +1,5 @@
 import useForm from './useForm'
+import { BiError, BiCheckCircle } from 'react-icons/bi'
 
 export default function FormDisplay() {
   const { data, setData, submit, error, processing, successMsg } = useForm(
@@ -15,21 +16,25 @@ export default function FormDisplay() {
       className='p-5 md:p-10 bg-[#7E121D] rounded-md shadow-sm sm:col-span-3 h-fit'
       onSubmit={submit}
     >
-      <div className='flex flex-col md:flex-row md:gap-6'>
+      <div>
         {error && (
-          <div className='flex gap-4 justify-center items-center'>
-            <span className='text-base lg:text-lg xl:text-xl font-medium text-[#CEAC5C] block my-2'>
+          <div className='flex gap-2 justify-center items-end my-2'>
+            <BiError className='text-3xl lg:text-xl xl:text-2xl text-[#CEAC5C]' />
+            <span className='text-base lg:text-lg xl:text-xl font-medium text-[#CEAC5C]'>
               {error}
             </span>
           </div>
         )}
         {successMsg && (
-          <div className='flex gap-4 justify-center items-center'>
-            <span className='text-base lg:text-lg xl:text-xl font-medium text-[#034F1B] block my-2'>
+          <div className='flex gap-4 justify-center items-end my-2'>
+          <BiCheckCircle className='text-3xl lg:text-xl xl:text-2xl text-[#034F1B]' />
+            <span className='text-base lg:text-lg xl:text-xl font-medium text-[#034F1B]'>
               {successMsg}
             </span>
           </div>
         )}
+      </div>
+      <div className='flex flex-col md:flex-row md:gap-6'>
         <div className='lg:my-2 xl:my-4 flex-grow'>
           <label
             htmlFor='fname'

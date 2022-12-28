@@ -19,6 +19,7 @@ export default function useForm(initData = {}, endpoint = '') {
 
       setProcessing(true)
       setError(undefined)
+      setSuccessMsg(undefined)
 
       fetch(endpoint, {
         method: 'POST',
@@ -33,7 +34,7 @@ export default function useForm(initData = {}, endpoint = '') {
           const data = await r.json()
           setProcessing(false)
           if (r.ok) setSuccessMsg(data.message)
-          setError(data.message)
+          else setError(data.message)
         })
     },
   }
